@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dialog Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="first">
+
+	<div data-role="header">
+		<h1>Dialog Test</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+		<a href="#page2">Another Page (normal)</a>		
+		</p>
+
+		<p>
+		<a href="#page3" data-rel="dialog">A Dialog (dialog)</a>		
+		</p>
+
+	</div>
+
+</div>
+
+<div data-role="page" id="page2">
+
+	<div data-role="header">
+		<h1>The Second</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+		This is the Second
+		</p>
+
+	</div>
+
+</div>
+
+<div data-role="page" id="page3">
+
+	<div data-role="header">
+		<h1>The Third</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+		This is the Third
+		</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

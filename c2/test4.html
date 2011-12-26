@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<title>Multi Page Example (2)</title> 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="homePage">
+
+	<div data-role="header">Welcome</div>
+
+	<div data-role="content">
+	<p>
+	Welcome to our first mobile web site. It's going to be the best site you've ever seen. 
+	Once we get some content. And a business plan. But the hard part is done!
+	</p>
+	
+	<p>
+		Find out about our wonderful <a href="products.html" data-prefetch>products</a>.
+	</p>
+	
+	<p>
+		You can also <a href="#aboutPage">learn more</a> about Megacorp.
+	</p>
+	</div>
+	
+	<div data-role="footer">
+	<i>Copyright Megacorp &copy; 2012</i>
+	</div>
+	
+</div>
+
+<div data-role="page" id="aboutPage" data-title="About Megacorp">
+
+	<div data-role="header">About Megacorp</div>
+
+	<div data-role="content">
+	<p>
+	This text talks about Megacorp and how interesting it is. Most likely though you want to
+	<a href="#homePage">return</a> to the home page.
+	</p>
+	</div>
+	
+	<div data-role="footer">
+	<i>Copyright Megacorp &copy; 2012</i>
+	</div>
+	
+</div>
+</body>
+</html>
