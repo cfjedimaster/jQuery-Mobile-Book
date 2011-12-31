@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notekeeper</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	<script src="application.js"></script>
+</head>
+<body>
+
+	<div data-role="page">
+		<div data-role="header">
+			<h1>Notekeeper</h1>
+		</div>
+
+		<div data-role="content">
+			<form>
+				<div>
+					<input id="title" type="text" placeholder="Add a note" />
+				</div>
+				<div>
+					<textarea id="note" placeholder="The content of your note"></textarea>
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<input id="btnNoThanks" type="submit" value="No Thanks" />
+					</div>
+					<div class="ui-block-b">
+						<input id="btnAddNote" type="button" value="Add Note" />
+					</div>
+				</div>
+			</form>
+
+			<ul id="notesList" data-role="listview" data-inset="true">
+				<li data-role="list-divider">Your Notes</li>
+				<li id="noNotes">You have no notes</li>
+			</ul>
+		</div>
+
+		<div data-role="footer" class="footer-docs">
+			<h5>Intro to jQuery Mobile</h5>
+		</div>
+	</div>
+
+</body>
+</html>
