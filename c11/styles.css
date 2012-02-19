@@ -1,0 +1,9 @@
+.ui-icon-notekeeper-note {
+	background-image: url("themes/images/notekeeper-icon-white-18.png");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-notekeeper-note {
+		background-image: url("themes/images/notekeeper-icon-white-36.png");
+		background-size: 18px 18px;
+	}
+}
