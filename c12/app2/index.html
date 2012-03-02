@@ -13,7 +13,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
 
 	$("#searchButton").bind("touchend", function() {
-		console.log("touchend");
 		var search = $.trim($("#search").val());
 		if(search == "") return;
 		
@@ -28,11 +27,9 @@ function onDeviceReady(){
 		var s = "";
 		for (var i = 0; i < matches.length; i++) {
 			s += "<li>"+matches[i].displayName+"</li>";
-			console.dir(JSON.stringify(matches[i]));
 		}
 		$("#results").html(s);
 		$("#results").listview("refresh");
-		console.log(matches.length);
 	}
 
 	errorContacts = function(err){
@@ -40,16 +37,6 @@ function onDeviceReady(){
 	}	
 }
 
-/*
-$(document).ready(function() {
-	
-	$(document).bind("deviceready", function(e) {
-		console.log("yo");
-	});
-	 
-	console.log("wtf");
-});
-*/
 </script>
 </head>
 
