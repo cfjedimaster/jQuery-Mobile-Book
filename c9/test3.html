@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Tester</title>
+<title>Swipe Tests</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
@@ -10,24 +10,45 @@
 
 <body>
 
-<div data-role="page" id="third">
+<div data-role="page" id="first">
 
 	<div data-role="header">
-		<h1>Test</h1>
+		<h1>First</h1>
 	</div>
 	
 	<div data-role="content">
-	<input type="button" id="pageBtn" value="Go to page">
+
+		<p>
+			Swipe to navigate
+		</p>
+
+	</div>
+
+</div>
+
+<div data-role="page" id="second">
+
+	<div data-role="header">
+		<h1>Second</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+			Swipe to the right...
+		</p>
 	</div>
 
 </div>
 
 <script>
-$("#pageBtn").click(function() {
-	$.mobile.changePage("test2.html", {transition:"flip"});
+$("body").bind("swipeleft swiperight", function(e) {
+	var page = $.mobile.activePage[0];
+	var dir = e.type;
+	if(page.id == "first" && dir == "swipeleft") $.mobile.changePage("#second");
+	if(page.id == "second" && dir == "swiperight") $.mobile.changePage("#first");
 });
 
 </script>
-
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Path Tester</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="third">
+
+	<div data-role="header">
+		<h1>Test</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<form>
+
+		<div data-role="fieldcontain">
+		    <label for="isabsurl">Is Absolute URL?</label>
+		    <input type="text" name="isabsurl" id="isabsurl" value=""  />
+			<div id="isabsurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="isrelurl">Is Relative URL?</label>
+		    <input type="text" name="isrelurl" id="isrelurl" value=""  />
+			<div id="isrelurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="issamedomain">Is Same Domain?</label>
+		    <input type="text" name="issamedomain" id="issamedomain" value=""  />
+		    <input type="text" name="issamedomain2" id="issamedomain2" value=""  />
+			<div id="issamedomainresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="makepath">Make Path Absolute</label>
+		    <input type="text" name="makepath" id="makepath" value="" placeholder="Relative Path" />
+		    <input type="text" name="makepath2" id="makepath2" value="" placeholder="Absolute Path" />
+			<div id="makepathresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="makeurl">Make URL Absolute</label>
+		    <input type="text" name="makeurl" id="makeurl" value="" placeholder="Relative URL" />
+		    <input type="text" name="makeurl2" id="makeurl2" value="" placeholder="Absolute URL" />
+			<div id="makeurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="parseurl">Parse URL</label>
+		    <input type="text" name="parseurl" id="parseurl" value=""  />
+			<div id="parseurlresult"></div>
+		</div>	
+
+		</form>
+	</div>
+
+</div>
+
+<script>
+$("#isabsurl").keyup(function() {
+	var thisVal = $(this).val();
+	var isAbsUrl = $.mobile.path.isAbsoluteUrl(thisVal);
+	$("#isabsurlresult").text(isAbsUrl);
+});
+
+$("#isrelurl").keyup(function() {
+	var thisVal = $(this).val();
+	var isRelUrl = $.mobile.path.isRelativeUrl(thisVal);
+	$("#isrelurlresult").text(isRelUrl);
+});
+
+$("#issamedomain,#issamedomain2").keyup(function() {
+	var domainVal1 = $("#issamedomain").val();
+	var domainVal2 = $("#issamedomain2").val();
+	var isSameDomain = $.mobile.path.isSameDomain(domainVal1,domainVal2);
+	$("#issamedomainresult").text(isSameDomain);
+});
+
+$("#makepath,#makepath2").keyup(function() {
+	var pathVal1 = $("#makepath").val();
+	var pathVal2 = $("#makepath2").val();
+	var makePathResult = $.mobile.path.makePathAbsolute(pathVal1,pathVal2);
+	$("#makepathresult").text(makePathResult);
+});
+
+$("#makeurl,#makeurl2").keyup(function() {
+	var urlVal1 = $("#makeurl").val();
+	var urlVal2 = $("#makeurl2").val();
+	var makeUrlResult = $.mobile.path.makeUrlAbsolute(urlVal1,urlVal2);
+	$("#makeurlresult").text(makeUrlResult);
+});
+
+$("#parseurl").keyup(function() {
+	var thisVal = $(this).val();
+	var parsedUrl = $.mobile.path.parseUrl(thisVal);
+	var s = "";
+	for (k in parsedUrl) {
+		s+= k+"="+parsedUrl[k]+"<br/>";
+	}
+	$("#parseurlresult").html(s);
+});
+
+</script>
+
+</body>
+</html>
