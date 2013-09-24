@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="first">
+
+	<div data-role="panel" data-display="overlay" id="leftPanel">
+		This is the left panel.
+
+		<p>
+			<a data-role="button" data-rel="close">Close</a>
+		</p>
+
+	</div>
+
+	<div data-role="header">
+		<h1>Test Panel</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<a href="#leftPanel" data-role="button">Open My Panel!</a>
+		<a href="#rightPanel" data-role="button">Open Another Panel!</a>
+
+	</div>
+
+
+	<div data-role="panel" data-display="push" data-position="right" id="rightPanel">
+		This is the right panel.
+
+		<p>
+			<a data-role="button" data-rel="close">Close</a>
+		</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

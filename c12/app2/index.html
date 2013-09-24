@@ -3,16 +3,16 @@
 <head>
 <title>Contact Search</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="jquery.mobile.min.css" />
-<script src="jquery.js"></script>
-<script src="jquery.mobile.min.js"></script>
-<script src="phonegap-1.4.1.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.mobile-1.3.2.min.js"></script>
+<script src="phonegap.js"></script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);	
 
 function onDeviceReady(){
 
-	$("#searchButton").bind("touchend", function() {
+	$("#searchButton").on("touchend", function() {
 		var search = $.trim($("#search").val());
 		if(search == "") return;
 		
@@ -49,10 +49,11 @@ function onDeviceReady(){
 		</div>
 		
 		<div data-role="content">
-			<input type="text" id="search" value="adam"  />            
-			<button id="searchButton">Search</button>
 
-			<ul id="results" data-role="listview" data-inset="true"></ul>
+            <input type="search" id="search" value=""  />            
+			<button id="searchButton">Search</button>
+			
+            <ul id="results" data-role="listview" data-inset="true"></ul>
 
 		</div>	
 

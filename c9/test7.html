@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>List Updates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="third">
+
+	<div data-role="header">
+		<h1>List Updates</h1>
+	</div>
+	
+	<div data-role="content" id="contentDiv">
+		
+		<input type="button" id="testBtn" value="Add A List">
+	</div>
+
+</div>
+
+<script>
+$("#testBtn").click(function() {
+	
+	$("#contentDiv").append("<ul data-role='listview' data-inset='true' id='theList'><li>Item One</li><li>Item Two</li></ul>");
+	$("#theList").listview();
+
+});
+</script>
+
+</body>
+</html>

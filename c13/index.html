@@ -3,9 +3,9 @@
 <head>
 <title>RSS Reader App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css" />
-<script src="jquery.mobile/jquery-1.6.4.min.js"></script>
-<script src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
+<script src="jquery.mobile/jquery-1.9.1.min.js"></script>
+<script src="jquery.mobile/jquery.mobile-1.3.2.min.js"></script>
 <script src="main.js"></script>
 </head>
 
@@ -34,7 +34,7 @@
 </div>
 
 <script>
-$("#intropage").bind("pagecreate", function(e) {
+$(document).on("pagecreate", "#intropage", function(e) {
 	init();	
 });
 </script>

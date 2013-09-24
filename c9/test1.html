@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tap Tests</title>
+<title>Page Transition Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="config.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 </head>
 
 <body>
@@ -13,30 +14,35 @@
 <div data-role="page" id="first">
 
 	<div data-role="header">
-		<h1>Tap Tests</h1>
+		<h1>Dialog Test</h1>
 	</div>
 	
 	<div data-role="content">
 
 		<p>
-			Tap anywhere on the page...
+		<a href="#page2">Another Page</a><br/>
+		<a href="test2.html">Yet Another Page</a><br/>	
 		</p>
 
-		<p id="status"></p>
-		
 	</div>
 
 </div>
 
-<script>
-$("body").bind("tap", function(e) {
-	$("#status").text("You just did a tap event!");
-});
+<div data-role="page" id="page2">
 
-$("body").bind("taphold", function(e) {
-	$("#status").text("You just did a tap hold event!");
-});
+	<div data-role="header">
+		<h1>The Second</h1>
+	</div>
+	
+	<div data-role="content">
 
-</script>
+		<p>
+		This is the Second. Go <a href="#first">first</a>.
+		</p>
+
+	</div>
+
+</div>
+
 </body>
 </html>

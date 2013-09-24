@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Event Tests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="first">
+
+	<div data-role="header">
+		<h1>Page Event Tests</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+		<a href="#page2" data-role="button">Go to Page 2</a>
+		<a href="test_pagea.html" data-role="button">Go to Page 3</a>
+		<a href="test_pageb.html" data-role="button">Go to Page 4</a>
+		<a href="test_pageDOESNTEXIST.html" data-role="button">Go to Page Failed</a>
+		</p>
+
+		
+	</div>
+
+</div>
+
+<div data-role="page" id="page2">
+
+	<div data-role="header">
+		<h1>Page Event Tests</h1>
+	</div>
+	
+	<div data-role="content">
+
+		<p>
+		<a href="#first" data-role="button">Go to Page 1</a>
+		<a href="test_pagea.html" data-role="button">Go to Page 3</a>
+		<a href="test_pageb.html" data-role="button">Go to Page 4</a>
+		</p>
+
+		
+	</div>
+
+</div>
+
+<script>
+
+$(document).bind("pagebeforeload pageload pageloadfailed pagebeforechange pagechange pagechangefailed pagebeforeshow pagebeforehide pageshow pagehide pagebeforecreate pagecreate pageinit pageremove updatelayout", function(e) {
+	console.log(e.type);
+});
+
+</script>
+
+</body>
+</html>

@@ -3,27 +3,29 @@ var feedCache= {};
 
 function init() {
 
-	//handle getting and displaying the intro or feeds		
-	$("#intropage").live("pageshow",function(e) {
+	//handle getting and displaying the intro or feeds	
+	$(document).on("pageshow", "#intropage", function(e) {
 		displayFeeds();
 	});
 	
 	//Listen for the addFeedPage so we can support adding feeds
-	$("#addfeedpage").live("pageshow", function(e) {
+	$(document).on("pageshow", "#addfeedpage", function(e) {
+		console.log('dojngpageshow');
 		$("#addFeedForm").submit(function(e) {
+			console.log('handle submit');
 			handleAddFeed();
 			return false;
 		});
 	});
 
 	//Listen for delete operations
-	$(".deleteFeed").live("click",function(e) {
+	$(document).on("touchend", ".deleteFeed", function(e) {
 		var delId = $(this).jqmData("feedid");
 		removeFeed(delId);
 	});
 	
 	//Listen for the Feed Page so we can display entries
-	$("#feedpage").live("pageshow", function(e) {
+	$(document).on("pageshow", "#feedpage",  function(e) {
 		//get the feed id based on query string
 		var query = $(this).data("url").split("=")[1];
 		//remove ?id=
@@ -53,7 +55,7 @@ function init() {
 	});
 	
 	//Listen for the Entry Page so we can display an entry
-	$("#entrypage").live("pageshow", function(e) {
+	$(document).on("pageshow", "#entrypage", function(e) {
 		//get the entry id and url based on query string
 		var query = $(this).data("url").split("?")[1];
 		//remove ?

@@ -1,172 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Scroll Tests</title>
+<title>Path Tester</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
 </head>
 
 <body>
 
-<div data-role="page" id="first">
+<div data-role="page" id="third">
 
 	<div data-role="header">
-		<h1>Scroll Tests</h1>
+		<h1>Test</h1>
 	</div>
 	
 	<div data-role="content">
 
-		<p>
-			Scroll please....<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		</p>
+		<form>
 
-		<p id="status"></p>		
+		<div data-role="fieldcontain">
+		    <label for="isabsurl">Is Absolute URL?</label>
+		    <input type="text" name="isabsurl" id="isabsurl" value=""  />
+			<div id="isabsurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="isrelurl">Is Relative URL?</label>
+		    <input type="text" name="isrelurl" id="isrelurl" value=""  />
+			<div id="isrelurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="makeurl">Make URL Absolute</label>
+		    <input type="text" name="makeurl" id="makeurl" value="" placeholder="Relative URL" />
+		    <input type="text" name="makeurl2" id="makeurl2" value="" placeholder="Absolute URL" />
+			<div id="makeurlresult"></div>
+		</div>	
+
+		<div data-role="fieldcontain">
+		    <label for="pathget">Path Get</label>
+		    <input type="text" name="pathget" id="pathget" value=""  />
+			<div id="pathgetresult"></div>
+		</div>	
+
+		</form>
 	</div>
 
 </div>
 
 <script>
-$("body").bind("scrollstart", function(e) {
-	$("#status").append("Start<br/>");
+$("#isabsurl").keyup(function() {
+	var thisVal = $(this).val();
+	var isAbsUrl = $.mobile.path.isAbsoluteUrl(thisVal);
+	$("#isabsurlresult").text(isAbsUrl);
 });
 
-$("body").bind("scrollstop", function(e) {
-	$("#status").append("Done!<br/>");
+$("#isrelurl").keyup(function() {
+	var thisVal = $(this).val();
+	var isRelUrl = $.mobile.path.isRelativeUrl(thisVal);
+	$("#isrelurlresult").text(isRelUrl);
+});
+
+$("#makeurl,#makeurl2").keyup(function() {
+	var urlVal1 = $("#makeurl").val();
+	var urlVal2 = $("#makeurl2").val();
+	var makeUrlResult = $.mobile.path.makeUrlAbsolute(urlVal1,urlVal2);
+	$("#makeurlresult").text(makeUrlResult);
+});
+
+$("#pathget").keyup(function() {
+	var thisVal = $(this).val();
+	var path = $.mobile.path.get(thisVal);
+	$("#pathgetresult").html(path);
 });
 
 </script>
+
 </body>
 </html>
