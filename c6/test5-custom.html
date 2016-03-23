@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Example 5 Custom</title>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
+</head>
+
+<body>
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h1>Form Demo</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		
+		<form action="echo.html" method="post">
+			
+		<div class="ui-field-contain">
+			<label for="favmovie">Favorite Movie:</label>
+			<select name="favmovie" id="favmovie"
+			data-native-menu="false">
+				<option value="Star Wars">Star Wars</option>
+				<option value="Revenge of the Sith">Revenge of the Sith</option>
+				<option value="Tron">Tron</option>
+				<option value="Tron Legacy">Tron Legacy</option>
+			</select>
+		</div>
+
+		<div class="ui-field-contain">
+		    <input type="submit" name="submit" value="Send"  />
+		</div>	
+		
+		</form>
+
+	</div>
+
+</div>
+
+</body>
+</html>

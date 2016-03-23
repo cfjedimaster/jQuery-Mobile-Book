@@ -3,9 +3,10 @@
 <head>
 <title>RSS Reader App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.2.min.css" />
-<script src="jquery.mobile/jquery-1.9.1.min.js"></script>
-<script src="jquery.mobile/jquery.mobile-1.3.2.min.js"></script>
+<link rel="stylesheet" 
+	href="jquery.mobile/jquery.mobile-1.4.5.min.css" />
+<script src="jquery.mobile/jquery-2.1.3.min.js"></script>
+<script src="jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
 <script src="main.js"></script>
 </head>
 
@@ -17,14 +18,17 @@
 		<h1>RSS Reader Application</h1>
 	</div>
 	
-	<div data-role="content" id="introContent">
+	<div role="main" class="ui-content" id="introContent">
 		<p id="introContentNoFeeds" style="display:none">
-			Welcome to the RSS Reader Application. You do not currently have
-			any RSS Feeds. Please use the "Add Feed" button below to begin.
+			Welcome to the RSS Reader Application. 
+			You do not currently have any RSS Feeds. 
+			Please use the "Add Feed" button below to begin.
 		</p>
-		<ul id="feedList" data-role="listview" data-inset="true" data-split-icon="delete"></ul>
+		<ul id="feedList" data-role="listview" 
+		data-inset="true" data-split-icon="delete"></ul>
 
-		<a href="addfeed.html" data-role="button" data-theme="b">Add Feed</a>
+		<a href="addfeed.html" 
+		data-role="button" data-theme="b">Add Feed</a>
 	</div>
 
 	<div data-role="footer">

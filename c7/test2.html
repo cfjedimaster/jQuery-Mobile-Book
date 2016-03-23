@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dialog Test (2)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<title>Grid Test</title>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
 </head>
 
 <body>
@@ -13,56 +19,42 @@
 <div data-role="page" id="first">
 
 	<div data-role="header">
-		<h1>Dialog Test</h1>
+		<h1>Grid Test</h1>
 	</div>
 	
-	<div data-role="content">
+	<div role="main" class="ui-content">
 
+	<div class="ui-grid-a">
+		<div class="ui-block-a">
 		<p>
-		<a href="#page2">Another Page (normal)</a>		
+		<img src="ray.png">
 		</p>
-
+		</div>
+		<div class="ui-block-b">
 		<p>
-		<a href="#page3" data-rel="dialog">A Dialog (dialog)</a>		
+		This is Raymond Camden. Here is some text about him. 
+		It may wrap or it may not but jQuery Mobile will make
+		it look good. Unlike Ray!
 		</p>
+		</div>
+		<div class="ui-block-a">
+		<p>
+		This is Scott Stroz. Scott Stroz is a guy who plays
+		golf and is really good at FPS video games.
+		</p>
+		</div>
+		<div class="ui-block-b">
+		<p>
+		<img src="scott.png">
+		</p>
+		</div>
+		
+	</div>
 
 	</div>
 
 </div>
 
-<div data-role="page" id="page2">
-
-	<div data-role="header">
-		<h1>The Second</h1>
-	</div>
-	
-	<div data-role="content">
-
-		<p>
-		This is the Second
-		</p>
-
-	</div>
-
-</div>
-
-<div data-role="page" id="page3">
-
-	<div data-role="header">
-		<h1>The Third</h1>
-	</div>
-	
-	<div data-role="content">
-
-		<p>
-		This is the Third
-		</p>
-		<a href="#page2" data-role="button">Page 2</a>
-		<a href="#first" data-role="button" data-rel="back">Cancel</a>
-
-	</div>
-
-</div>
 
 </body>
 </html>

@@ -2,10 +2,16 @@
 <html>
 <head>
 <title>List Updates</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
 </head>
 
 <body>
@@ -16,7 +22,7 @@
 		<h1>List Updates</h1>
 	</div>
 	
-	<div data-role="content" id="contentDiv">
+	<div role="main" class="ui-content" id="contentDiv">
 		
 		<input type="button" id="testBtn" value="Add A List">
 	</div>
@@ -26,7 +32,9 @@
 <script>
 $("#testBtn").click(function() {
 	
-	$("#contentDiv").append("<ul data-role='listview' data-inset='true' id='theList'><li>Item One</li><li>Item Two</li></ul>");
+	var html="<ul data-role='listview' data-inset='true' id='theList'>"+
+	"<li>Item One</li><li>Item Two</li></ul>";
+	$("#contentDiv").append(html);
 	$("#theList").listview();
 
 });

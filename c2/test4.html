@@ -3,51 +3,54 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">	
 <title>Multi Page Example (2)</title> 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 <body>
 
 <div data-role="page" id="homePage">
 
-	<div data-role="header"><h1>Welcome</h1></div>
+  <div data-role="header"><h1>Welcome</h1></div>
 
-	<div data-role="content">
-	<p>
-	Welcome to our first mobile web site. It's going to be the best site you've ever seen. 
-	Once we get some content. And a business plan. But the hard part is done!
-	</p>
-	
-	<p>
-		Find out about our wonderful <a href="products.html" data-prefetch="true">products</a>.
-	</p>
-	
-	<p>
-		You can also <a href="#aboutPage">learn more</a> about Megacorp.
-	</p>
-	</div>
-	
-	<div data-role="footer">
-	<h4>Copyright Megacorp &copy; 2013</h4>
-	</div>
+  <div role="main" class="ui-content">
+  <p>
+  Welcome to our first mobile web site. It's going to be 
+  the best site you've ever seen. Once we get some content. 
+  And a business plan. But the hard part is done!
+  </p>
+
+  <p>
+  Find out about our wonderful <a href="products.html" data-prefetch="true">products</a>.
+  </p>
+
+  <p>
+  You can also <a href="#aboutPage">learn more</a> 
+  about Megacorp.
+  </p>
+  </div>
+
+  <div data-role="footer">
+  <h4>Copyright Megacorp &copy; 2015</h4>
+  </div>
 	
 </div>
 
-<div data-role="page" id="aboutPage" data-title="About Megacorp">
+<div data-role="page" id="aboutPage" data-title="All about Megacorp">
 
 	<div data-role="header"><h1>About Megacorp</h1></div>
 
-	<div data-role="content">
+	<div role="main" class="ui-content">
 	<p>
-	This text talks about Megacorp and how interesting it is. Most likely though you want to
-	<a href="#homePage">return</a> to the home page.
+	This text talks about Megacorp and how interesting it is. 
+    Most likely though you want to <a href="#homePage">return</a> 
+    to the home page.
 	</p>
 	</div>
 	
 	<div data-role="footer">
-	<h4>Copyright Megacorp &copy; 2013</h4>
+	<h4>Copyright Megacorp &copy; 2015</h4>
 	</div>
 	
 </div>

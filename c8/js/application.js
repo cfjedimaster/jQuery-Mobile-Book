@@ -20,7 +20,7 @@ $(function(){
 
 		app.bindings = function(){
 			// set up binding for form
-			$('#btnAddNote').on('click', function(e){
+			$('#btnAddNote').on('touchend', function(e){
 				e.preventDefault();
 				// save the note
 				app.addNote(
@@ -28,13 +28,13 @@ $(function(){
 					$('#note').val()
 				);
 			});
-			$(document).on('click', '#notesList a', function(e){
+			$(document).on('touchend', '#notesList a', function(e){
 				e.preventDefault();
 				var href = $(this)[0].href.match(/\?.*$/)[0];
 				var title = href.replace(/^\?title=/,'');
 				app.loadNote(title);
 			});
-			$(document).on('click', '#btnDelete', function(e){
+			$(document).on('touchend', '#btnDelete', function(e){
 				e.preventDefault();
 				var key = $(this).data('href');
 				app.deleteNote(key);
@@ -46,12 +46,12 @@ $(function(){
 			var notes = app.getNotes(),
 				// lookup specific note
 				note = notes[title],
-				page = ['<div data-role="page" data-url="details" data-add-back-btn="true">',
-							'<div data-role="header">',
+				page = ['<div data-role="page">',
+							'<div data-role="header" data-add-back-btn="true">',
 								'<h1>Notekeeper</h1>',
 								'<a id="btnDelete" href="" data-href="ID" data-role="button" class="ui-btn-right">Delete</a>',
 							'</div>',
-							'<div data-role="content"><h3>TITLE</h3><p>NOTE</p></div>',
+							'<div role="main" class="ui-content"><h3>TITLE</h3><p>NOTE</p></div>',
 						'</div>'].join('');
 			var newPage = $(page);
 			//append it to the page container
@@ -86,7 +86,8 @@ $(function(){
 			// get notes
 			var notes = localStorage['Notekeeper'];
 			// convert notes from string to object
-			return JSON.parse(notes);
+			if(notes) return JSON.parse(notes);
+			return [];
 		};
 
 		app.displayNotes = function(){

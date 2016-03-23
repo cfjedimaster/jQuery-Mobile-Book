@@ -2,10 +2,16 @@
 <html>
 <head>
 <title>Form Example 3</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
 </head>
 
 <body>
@@ -16,44 +22,45 @@
 		<h1>Form Demo</h1>
 	</div>
 	
-	<div data-role="content">
+	<div role="main" class="ui-content">
 		
-		<form action="echo.cfm" method="post">
+		<form action="echo.html" method="post">
 			
-		<div data-role="fieldcontain">
 			<fieldset data-role="controlgroup">
 				<legend>Favorite Movie:</legend>
 
-				<input type="radio" name="favoritemovie" id="favoritemovie1" value="Star Wars">
+				<input type="radio" name="favoritemovie" 
+				id="favoritemovie1" value="Star Wars">
 				<label for="favoritemovie1">Star Wars</label> 
 
-				<input type="radio" name="favoritemovie" id="favoritemovie2" value="Vanilla Sky">
+				<input type="radio" name="favoritemovie" 
+				id="favoritemovie2" value="Vanilla Sky">
 				<label for="favoritemovie2">Vanilla Sky</label> 
 
-				<input type="radio" name="favoritemovie" id="favoritemovie3" value="Inception">
+				<input type="radio" name="favoritemovie" 
+				id="favoritemovie3" value="Inception">
 				<label for="favoritemovie3">Inception</label> 
 
 			</fieldset>
-		</div>
 
-		<div data-role="fieldcontain">
 			<fieldset data-role="controlgroup">
 				<legend>Favorite Colors:</legend>
 
-				<input type="checkbox" name="favoritecolor" id="favoritecolor1" value="Green">
+				<input type="checkbox" name="favoritecolor" 
+				id="favoritecolor1" value="Green">
 				<label for="favoritecolor1">Green</label> 
 
-				<input type="checkbox" name="favoritecolor" id="favoritecolor2" value="Red">
+				<input type="checkbox" name="favoritecolor" 
+				id="favoritecolor2" value="Red">
 				<label for="favoritecolor2">Red</label> 
 
-				<input type="checkbox" name="favoritecolor" id="favoritecolor3" value="Yellow">
+				<input type="checkbox" name="favoritecolor" 
+				id="favoritecolor3" value="Yellow">
 				<label for="favoritecolor3">Yellow</label> 
 
 			</fieldset>
-		</div>
 
 		    <input type="submit" name="submit" value="Send"  />
-		</div>	
 		
 		</form>
 

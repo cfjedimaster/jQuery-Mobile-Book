@@ -2,13 +2,43 @@
 <html>
 <head>
 <title>Form Example 9</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
 </head>
 
 <body>
+
+<style>
+.custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+    text-indent: -5.9em;
+}
+.custom-size-flipswitch.ui-flipswitch .ui-flipswitch-off {
+    text-indent: 0.5em;
+}
+/* Custom widths are needed because the length of custom labels differs from
+   the length of the standard labels */
+.custom-size-flipswitch.ui-flipswitch {
+    width: 8.875em;
+}
+.custom-size-flipswitch.ui-flipswitch.ui-flipswitch-active {
+    padding-left: 7em;
+    width: 1.875em;
+}
+@media (min-width: 28em) {
+    // Repeated from rule .ui-flipswitch above
+    .ui-field-contain > label + .custom-size-flipswitch.ui-flipswitch {
+        width: 1.875em;
+    }
+}
+</style>
 
 <div data-role="page">
 
@@ -16,23 +46,20 @@
 		<h1>Form Demo</h1>
 	</div>
 	
-	<div data-role="content">
+	<div role="main" class="ui-content">
 		
-		<form action="echo.cfm" method="post">
+		<form action="echo.html" method="post">
 			
-		<div data-role="fieldcontain">
-		    <label for="gender">Gender:</label>
-			<select name="gender" id="gender" data-role="slider" >
-				<option value="0">Male</option>
-				<option value="1">Female</option>
-			</select>
-		</div>	
+			<label for="test">Test:</label>
+			<input type="checkbox" data-role="flipswitch" name="test" id="test">
 
-		<div data-role="fieldcontain">
-		    <input type="submit" name="submit" value="Send"  />
-		</div>	
-		
+			<label for="gender">Gender:</label>
+			<input type="checkbox" data-role="flipswitch" name="gender" 
+			id="gender" data-off-text="Male" data-on-text="Female" 
+			data-wrapper-class="custom-size-flipswitch">
+
 		</form>
+
 
 	</div>
 

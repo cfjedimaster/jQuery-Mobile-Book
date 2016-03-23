@@ -2,11 +2,17 @@
 <html>
 <head>
 <title>Page Transition Test</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-2.1.3.min.js">
+</script>
 <script src="config2.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" 
+        src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+</script>
 </head>
 
 <body>
@@ -17,16 +23,18 @@
 		<h1>Form Test</h1>
 	</div>
 	
-	<div data-role="content">
+	<div role="main" class="ui-content">
 
 		<div data-role="fieldcontain">
 		    <label for="name">Name:</label>
-		    <input type="text" name="name" id="name" value=""  />
+		    <input type="text" name="name" id="name" 
+			value=""  />
 		</div>	
 
 		<div data-role="fieldcontain">
 		    <label for="email">Email:</label>
-		    <input type="text" name="email" id="email" value="" class="boring"  />
+		    <input type="text" name="email" id="email" 
+			value="" class="boring"  />
 		</div>	
 
 	</div>

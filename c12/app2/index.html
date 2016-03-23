@@ -2,10 +2,16 @@
 <html>
 <head>
 <title>Contact Search</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
-<script src="jquery-1.9.1.js"></script>
-<script src="jquery.mobile-1.3.2.min.js"></script>
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1">	
+<link rel="stylesheet" 
+      href="css/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" 
+        src="js/jquery-2.1.3.min.js">
+</script>
+<script type="text/javascript" 
+        src="js/jquery.mobile-1.4.5.min.js">
+</script>
 <script src="phonegap.js"></script>
 <script>
 document.addEventListener("deviceready", onDeviceReady, false);	
@@ -48,7 +54,7 @@ function onDeviceReady(){
 			<h1>Contact Search</h1>
 		</div>
 		
-		<div data-role="content">
+		<div role="main" class="ui-content">
 
             <input type="search" id="search" value=""  />            
 			<button id="searchButton">Search</button>

@@ -20,7 +20,7 @@ $(function(){
 
 		app.bindings = function(){
 			// set up binding for form
-			$('#btnAddNote').bind('click', function(e){
+			$('#btnAddNote').bind('touchend', function(e){
 				e.preventDefault();
 				// save the note
 				app.addNote(
@@ -28,17 +28,19 @@ $(function(){
 					$('#note').val()
 				);
 			});
-			$('#notesList a').live('click',function(e){
+			$(document).on('touchend','#notesList a', function(e){
 				e.preventDefault();
 				var href = $(this)[0].href.match(/\?.*$/)[0];
 				var title = href.replace(/^\?title=/,'');
 				app.loadNote(title);
 			});
-			$('#btnDelete').live('click',function(e){
+
+			$(document).on('touchend','#btnDelete',function(e){
 				e.preventDefault();
 				var key = $(this).data('href');
 				app.deleteNote(key);
 			});
+
 		}
 		
 		app.loadNote = function(title){
